@@ -58,4 +58,4 @@ class User:
         '''
         Function that displays users 
         '''
-        return cls.user_details()
+        return cls:user_details()
