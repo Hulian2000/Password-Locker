@@ -38,11 +38,11 @@ class Credentials:
     @classmethod
     def app_exist(cls,app):
         '''
-        this it the method that checks if it exist
+        Method that checks if app exist
         Args:
-            app name is checked if the app exist
+            app name to check if app exist
         Returns:
-            a boolean depends on the app that is checked for
+            a boolean depending on the app checked for
         '''
         for credentials in cls.app_details:
             if credentials.app == app:
@@ -52,7 +52,7 @@ class Credentials:
     @classmethod
     def gen_password(size = 8):
         '''
-        Function to it generates random password with eight digits
+        Function to generate random password with six digits
         '''
         char = string.ascii_uppercase + string.ascii_lowercase
         gen_password = ''.join(random.choice(char) for i in range(size))
@@ -61,6 +61,6 @@ class Credentials:
     @classmethod
     def display_app(cls,app):
         '''
-        Function that are displayed by the app
+        Function that displays app
         '''    
-        return cls: app_details()
+        return cls.app_details

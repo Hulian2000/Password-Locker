@@ -1,21 +1,25 @@
 #!/usr/bin/env python3.6
 from user import User
-from credentials import Credentials
+from credential import Credentials
 
 
 # creating an acount
-## def create_user(fname,sname,password):
-    '''
+
+
+def create_user(fname, sname, password):
+    ''' 
     function to create a new user account
+
     '''
-    new_user = User(fname,sname,password)
+    new_user = User(fname, sname, password)
     return new_user
 
-def create_app(app,app_password):
+
+def create_app(app, app_password):
     '''
     Function to create new app and password
     '''
-    new_app = Credentials(app,app_password)
+    new_app = Credentials(app, app_password)
     return new_app
 
 
@@ -41,6 +45,7 @@ def del_account(user):
     '''
     user.delete_account()
 
+
 def del_app(credentials):
     '''
     Function that deletes app logged
@@ -48,6 +53,8 @@ def del_app(credentials):
     credentials.delete_app()
 
 # finding a user by first name
+
+
 def find_user(first_name):
     '''
     Function that finds user by their first name and returns their first name
@@ -62,11 +69,14 @@ def find_app(app):
     return Credentials.find_app(app)
 
 # checking if a user exists
+
+
 def user_existance(first_name):
     '''
     Function that checks if a user exist and returns a boolean
     '''
     return User.user_exist(first_name)
+
 
 def app_existance(app):
     '''
@@ -75,17 +85,21 @@ def app_existance(app):
     return Credentials.app_exist(app)
 
 # displaying users
+
+
 def display_users():
     '''
     Function that does actual display of users
     '''
     return User.display_user()
 
+
 def display_app():
     '''
     Function that displays a list of apps saved
     '''
     return Credentials.display_app()
+
 
 def generate_password():
     '''
@@ -94,7 +108,9 @@ def generate_password():
     generate_password = Credentials.gen_password()
     return generate_password
 
-## main function
+# main function
+
+
 def main():
     print("Welcome to passlock, to login please enter your name")
     user_name = input().upper()
@@ -102,7 +118,6 @@ def main():
     print("Password:")
     password = input()
 
-    
     print(f"Welcome {user_name}!")
 
     while True:
@@ -115,32 +130,29 @@ def main():
             print("New app:\n")
             app = input()
 
-        
             # print("App password")
             # app_password = input()
 
-
-
-            while True:            
+            while True:
                 print("-"*10)
                 print("App password:\n use short codes:'mine' to use your own password\n 'generate' to use generated password\n 'ex'to exit")
 
                 password = input().lower().strip()
 
                 if password == 'mine':
-                        print("Enter your password")
-                        app_password = input().strip()
-                        break
+                    print("Enter your password")
+                    app_password = input().strip()
+                    break
                 elif password == 'generate':
-                        app_password = generate_password()
-                        break
+                    app_password = generate_password()
+                    break
                 elif password == 'x':
-                        break
-                else :
-                        print("Please enter a valid password")
+                    break
+                else:
+                    print("Please enter a valid password")
 
-
-            save_app(create_app(app,app_password)) # create and save new app and password
+            # create and save new app and password
+            save_app(create_app(app, app_password))
 
             print(f"New {app} account created\n")
             print(f"Password: {app_password}")
@@ -150,9 +162,11 @@ def main():
                 print("Here is a list of all your apps their respective passwords")
 
                 for credentials in display_app():
-                    print(f"{credentials.app} - Password: {credentials.app_password}")
-                else :
-                    print("Save a list of apps with their passwords inorder to have them displayed")
+                    print(
+                        f"{credentials.app} - Password: {credentials.app_password}")
+                else:
+                    print(
+                        "Save a list of apps with their passwords inorder to have them displayed")
 
         elif short_code == 'DEL':
             '''
@@ -163,15 +177,16 @@ def main():
 
             print("Confirm password")
             app_password = input()
-            
-            
+
             return credentials.delete_app()
-            
+
         elif short_code == 'EXIT':
             print("You're now leaving pass-lock")
             break
-        else :
+        else:
             print("Could you please use the short codes?")
+
+
 if __name__ == '__main__':
-    
+
     main()
