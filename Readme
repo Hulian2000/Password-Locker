@@ -1,33 +1,39 @@
-##Password-Locker.
+Project Name.
+Password-Locker.
 
-This script is for you if you forget your passwords frequently.
+Project Description
+An app that stores users passwords for various apps since its hard to memorize passwords
 
-A command line password locker made in python. When you run this script from terminal and passing
-your account stored or related tags as a command line argument, then the script copies the account's
-password to your clipboard.The passwords are stored encrypted by 256-bit AES in data.ini file.
+Author
+Hulian Juba John
 
-##Requirements
-Make sure you have python3 installed then run this command in terminal :-
+Author details
+Email: hulian.ashraf703@yahoo.com.
 
-$ pip install pyperclip configparser pycrypto getpass hashlib
-Usage:
-Run this command for first time to add new password for this script.
+Description
+This project has tests that implements each method in the user and credentials class. The methods tested include; saving, displaying, deleting and checking if user and app really exist as saved. The app continues to enable the user can interact with the app as they can add apps and passwords used in their different accounts. For one to use the app, a user has to login using their details, user name and password, then can proceed to add accounts they have passwords for or view the passwords for previously added apps.
 
-$ python3 pass_lock.py
-To add new accounts
+Installation and Setup instructions.
+You are required to install the below apps;
+1.Python3.6
+2.Pip
+3.Pyperclip
+4.x-clip
+Known-bugs
+The app can not be able to save the initial app details.
 
-$ python3 pass_lock.py --add [account_name]
-To copy password of account stored
+Technologies used
+1.Python
+2.Development
+3.To contribute,
 
-$ python3 pass_lock.py --get [account_name]
-To list all accounts stored
-
-$ python3 pass_lock.py -l
-For help menu
-
-$ python3 pass_lock.py -h
-Add security to the script
-
-Run chmod 700 data.ini so that only the owner can access the data file.
-Accessing your passwords
-
+Fork the repository of the app in git-hub.
+Create a new branch git branch contributions/improvements
+Navigate to your the improvements branch git checkout improvements
+Make appropriate changes in the files
+Add changes to reflect the changes made.
+Commit your changes git commit -am "improvements"
+Push to the git branch git push origin improvements
+Create a pull request
+License
+MIT license 2019.
