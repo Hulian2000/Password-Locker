@@ -1,17 +1,8 @@
 #!/usr/bin/env python3.6
 from user import User
-from credential import Credentials
-
-
-
-
-
-
-#!/usr/bin/env python3.6
-from user import User
 from credentials import Credentials
 
-'''
+
 # creating an acount
 ## def create_user(fname,sname,password):
     '''
