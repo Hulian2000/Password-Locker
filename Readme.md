@@ -26,7 +26,7 @@ You are required to install the below apps;
 2.Pip
 3.Pyperclip
 4.x-clip
-##Known-bugs.
+##Known-bugs:
 
 The app can not be able to save the initial app details.
 
